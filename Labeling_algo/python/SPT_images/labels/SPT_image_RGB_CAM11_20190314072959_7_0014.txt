@@ -1,0 +1,13 @@
+12
+347 289 363 374 particular-0
+119 285 145 374 particular-0
+403 8 414 231 particular-0
+341 8 363 299 particular-0
+158 8 187 340 particular-0
+93 8 125 374 particular-0
+24 8 57 277 particular-0
+246 183 329 374 bus-1
+1 207 19 374 motociclista-2
+1 35 9 144 motociclista-2
+57 199 85 374 taxi-6
+369 15 389 329 taxi-6

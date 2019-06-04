@@ -1,0 +1,11 @@
+/data/faculty/calderonf/Conversion_anotaciones_placas/images/WCK759-C32-A-AV-CIUDAD-DE-CALI-CL139-SUBA-17-01-2017 09_07_21.jpg
+/data/faculty/calderonf/Conversion_anotaciones_placas/images/WCK759-C32-P-AV-CIUDAD-DE-CALI-CL139-SUBA-17-01-2017 09_07_28.jpg
+/data/faculty/calderonf/Conversion_anotaciones_placas/images/CAH533-C31-A-AV-CARACAS-CL53-CHAPINERO-16-08-2017 12_06_23.jpg
+/data/faculty/calderonf/Conversion_anotaciones_placas/images/AAH712-C31-P-CR80-CL26-SUR-KENNEDY-07-08-2017 10_12_30.jpg
+/data/faculty/calderonf/Conversion_anotaciones_placas/images/ABU940-C14-A-AUTOPISTA-SUR-CR62A-CIUDAD BOLIVAR-23-01-2017 07_41_35.jpg
+/data/faculty/calderonf/Conversion_anotaciones_placas/images/ACJ178-C26-P-CR62A-AV-AUTOPISTA-SUR-CIUDAD BOLIVAR-21-04-2017 09_59_25.jpg
+/data/faculty/calderonf/Conversion_anotaciones_placas/images/UAC432-C26-A-CR62A-AV-AUTOPISTA-SUR-CIUDAD BOLIVAR -27-04-2017 08_03_53.jpg
+/data/faculty/calderonf/Conversion_anotaciones_placas/images/TGV906-C14-A-CR7-CL45-CHAPINERO-04-07-2018 07_32_30.jpg
+/data/faculty/calderonf/Conversion_anotaciones_placas/images/TGW123-C14-A-CR7-CL45-CHAPINERO-03-07-2018 08_47_10.jpg
+/data/faculty/calderonf/Conversion_anotaciones_placas/images/TGW123-C14-P-CR7-CL45-CHAPINERO-03-07-2018 08_47_04.jpg
+/data/faculty/calderonf/Conversion_anotaciones_placas/images/TGW228-C14-A-CR7-CL94-CHAPINERO-03-07-2018 07_14_18.jpg

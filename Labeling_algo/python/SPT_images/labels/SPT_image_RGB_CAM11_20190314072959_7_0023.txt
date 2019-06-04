@@ -1,0 +1,8 @@
+7
+336 60 360 374 particular-0
+217 230 232 374 motociclista-2
+238 163 257 324 motociclista-2
+295 138 322 371 motociclista-2
+369 8 408 374 peaton-4
+382 242 396 374 taxi-6
+397 206 408 346 taxi-6

@@ -1,0 +1,7 @@
+6
+237 301 255 374 particular-0
+324 8 414 346 particular-0
+289 8 336 316 particular-0
+10 8 66 374 particular-0
+389 260 414 374 motociclista-2
+144 51 187 234 motociclista-2

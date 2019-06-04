@@ -1,0 +1,16 @@
+15
+118 286 149 321 particular-0
+374 235 414 321 particular-0
+211 104 224 204 particular-0
+205 64 324 321 particular-0
+1 4 189 212 particular-0
+289 269 314 321 motociclista-2
+116 206 165 321 motociclista-2
+360 189 414 292 motociclista-2
+180 184 222 305 motociclista-2
+49 176 84 288 motociclista-2
+46 273 82 321 taxi-6
+223 117 242 195 taxi-6
+170 49 209 208 taxi-6
+376 43 414 204 taxi-6
+295 41 372 321 taxi-6

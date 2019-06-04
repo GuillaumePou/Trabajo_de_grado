@@ -1,0 +1,7 @@
+6
+56 111 77 374 particular-0
+99 39 125 374 particular-0
+277 8 311 374 particular-0
+219 29 266 374 camion-5
+179 51 203 374 taxi-6
+379 44 410 374 taxi-6

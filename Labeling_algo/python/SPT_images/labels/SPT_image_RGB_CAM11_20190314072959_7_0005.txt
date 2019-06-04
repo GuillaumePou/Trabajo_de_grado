@@ -1,0 +1,10 @@
+9
+265 218 291 321 particular-0
+198 188 232 321 particular-0
+1 59 18 222 particular-0
+157 38 197 220 particular-0
+66 7 105 219 particular-0
+27 190 185 321 bus-1
+302 244 328 321 taxi-6
+240 227 276 321 taxi-6
+102 38 135 199 taxi-6

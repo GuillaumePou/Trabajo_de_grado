@@ -1,0 +1,17 @@
+16
+285 277 299 374 particular-0
+366 244 400 374 particular-0
+57 227 69 374 particular-0
+338 8 370 337 particular-0
+62 8 128 374 particular-0
+1 8 52 374 particular-0
+326 311 349 374 motociclista-2
+274 229 298 374 motociclista-2
+389 206 414 374 motociclista-2
+359 129 380 319 motociclista-2
+301 8 343 374 minivan-3
+129 8 214 374 camion-5
+192 255 222 374 taxi-6
+231 24 284 374 taxi-6
+382 8 408 259 taxi-6
+276 8 302 231 taxi-6

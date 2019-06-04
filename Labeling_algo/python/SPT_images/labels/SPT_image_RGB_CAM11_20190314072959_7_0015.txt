@@ -1,0 +1,20 @@
+19
+59 301 76 374 particular-0
+382 300 414 374 particular-0
+96 286 110 374 particular-0
+400 103 414 212 particular-0
+8 9 33 374 particular-0
+385 8 413 274 particular-0
+310 8 332 254 particular-0
+124 8 152 287 particular-0
+64 8 108 309 particular-0
+54 8 71 237 particular-0
+220 126 275 374 bus-1
+130 259 149 374 motociclista-2
+318 169 341 374 motociclista-2
+32 152 63 374 motociclista-2
+180 112 194 282 motociclista-2
+272 29 291 239 motociclista-2
+400 11 414 182 motociclista-2
+338 8 414 362 motociclista-2
+325 287 338 374 taxi-6

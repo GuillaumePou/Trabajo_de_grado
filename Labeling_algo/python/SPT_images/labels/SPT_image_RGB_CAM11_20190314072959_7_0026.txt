@@ -1,0 +1,12 @@
+11
+242 13 277 331 particular-0
+357 8 414 347 particular-0
+60 8 157 351 particular-0
+40 8 51 187 particular-0
+1 8 49 289 particular-0
+1 272 41 374 motociclista-2
+297 103 306 209 motociclista-2
+166 11 199 305 taxi-6
+294 8 352 191 taxi-6
+279 8 300 244 taxi-6
+189 8 250 305 taxi-6

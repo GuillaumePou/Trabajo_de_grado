@@ -1,0 +1,12 @@
+11
+1 83 110 315 particular-0
+161 25 231 241 particular-0
+337 23 414 206 particular-0
+328 165 414 247 motociclista-2
+314 84 345 167 motociclista-2
+222 68 284 307 motociclista-2
+205 15 238 138 motociclista-2
+234 176 414 321 camion-5
+98 254 229 321 taxi-6
+9 205 86 321 taxi-6
+255 14 312 196 taxi-6
