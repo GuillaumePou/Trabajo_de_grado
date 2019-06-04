@@ -1,0 +1,6 @@
+classes= 9
+train  = ../data/training_list.txt
+valid  = ../data/valid.txt
+names = ../data/septima.names
+backup = backup
+
