@@ -4,6 +4,7 @@ This repository presents the code of my "trabajo de grado" realized to obtain th
 
 
 All the weights necessary to run the trained model are avaible at the following link:
+https://send.firefox.com/download/57beffe19756aa40/#MBoqJ8zMIGHKV-DMPgoy0A
 
 You shoul download then unzipp and copy the folder in inference folder of the repository.
 
