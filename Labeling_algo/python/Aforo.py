@@ -11,16 +11,14 @@ import ntpath
 from Lineiterator import *
 
 
-#NUESTRO YOLO ENTRENADO 80000 iteraciones
+#SDM YOLO TRAIN 80000 iterations
 net = load_net("../data/yolo-obj.cfg", "../weight_SDM/yolo-obj_final.weights", 0)
 meta = load_meta("../data/obj.data")
     
-    
-#primera vez
 charlador=False
 framesttl=5
 deCamara=False
-MAXW=550 ## 200 pixeles maximo de ancho permitido
+MAXW=550
 mindist=10
 
 if deCamara:
@@ -38,7 +36,7 @@ frames=0
 ret_val, imgFile2 = cam.read()
 frames+=1
 if not ret_val:
-    print ('no se pudo abrir la camara, saliendo')
+        print ('Couldn t open the camera')
     exit()
 
 imgFile3 = cv2.cvtColor(imgFile2, cv2.COLOR_BGR2RGB)
@@ -49,7 +47,7 @@ imgFileptr,cv_img=get_iplimage_ptr(imgFile3)
 ipl_in2_image(imgFileptr,imgImported)
 rgbgr_image(imgImported)
 
-track=tr.tracking(verbose=charlador,mindist=mindist,framesttl=framesttl)#verbose=False,mindist=100
+track=tr.tracking(verbose=charlador,mindist=mindist,framesttl=framesttl)
 
 lineasDeConteo=1 # only one couting line
 print ("Only ",lineasDeConteo," line for spatio-temporal accumulation")
@@ -57,7 +55,7 @@ print ("Only ",lineasDeConteo," line for spatio-temporal accumulation")
 contadores=[]
 for cc in range(lineasDeConteo):
     sleep(1)
-    lineaDeConteo=lc.selectLine(imgFile2,ownString='Selecciona la linea de conteo #' +str(cc+1),filename=archsal,linecount=cc+1)
+    lineaDeConteo=lc.selectLine(imgFile2,ownString='Select the line for the spatio-temporal accumulation #' +str(cc+1),filename=archsal,linecount=cc+1)
 # parameters of each line of counting    
     sleep(1)
     contadores.append(lc.counter(lineaDeConteo.pt1,lineaDeConteo.pt2,filename=archsal,linecount=cc+1,fps=20))
@@ -89,12 +87,13 @@ acc_R[:,int(count)] = itbufferR[:,2]
     
 colour = [(0,0,0),(0,0,255),(0,255,0),(255,0,0),(255,255,255),(0,255,255),(128,0,0),(255,165,0),(255,255,0)]            
 num2clases=['particular', 'bus', 'motociclista', 'minivan', 'peaton', 'camion', 'taxi', 'ciclista', 'tractomula']
+classes = [0,1,2,3,4,5,6,7,8]
 
 while True:
     ret_val, imgFile2 = cam.read()
     frames+=1 
     if not ret_val:#end process at the end of the video
-        print ("Fin del video o salida en camara, saliendo")
+        print ("End of the video, exit")
         break
     
     segframes=cam.get(cv2.cv.CV_CAP_PROP_POS_FRAMES)
@@ -107,7 +106,7 @@ while True:
 
     r = detect_img(net, meta, imgImported) 
     if charlador:
-        print ('Detecciones: '+str(len(r)))
+        print ('Detections: '+str(len(r)))
         print (r)
         
         for i in range(len(r)):
@@ -120,12 +119,12 @@ while True:
         if r[i][2][2]<MAXW:
             track.insertNewObject(r[i][2][0],r[i][2][1],r[i][2][2],r[i][2][3],strFeature=r[i][0])
         else:
-            print ("        eliminado objeto por tamanio= ",r[i][2][2])
+            print (" Object deleted because of size = ",r[i][2][2])
             
-    if charlador:
-        print('Antes de procesar')
-        track.printObjets()
-        track.printPaths()
+#    if charlador:
+#        print('Antes de procesar')
+#        track.printObjets()
+#        track.printPaths()
         
     track.processObjectstoPaths()
 
@@ -135,35 +134,7 @@ while True:
         y=int(track.p.p[j].rect.y)
         u=int(track.p.p[j].rect.u)
         v=int(track.p.p[j].rect.v)
-        
         cv2.rectangle(imgFile4, (x,y), (u,v),track.p.p[j].colour, thickness=cv2.cv.CV_FILLED, lineType=8, shift=0)
-        if track.p.p[j].contado:
-            cv2.putText(imgFile3,str(track.p.p[j].str), (int(track.p.p[j].cp.x),int(track.p.p[j].cp.y)), cv2.FONT_HERSHEY_SIMPLEX,1, (0,0,255))
-        else:
-            cv2.putText(imgFile3,str(track.p.p[j].str), (int(track.p.p[j].cp.x),int(track.p.p[j].cp.y)), cv2.FONT_HERSHEY_SIMPLEX,1, (255,255,255))
-    if charlador:
-        print('Despues de procesar')
-        track.printPaths()
-        
-    #show line and point chose at the begining
-    for contar in contadores:
-        cv2.circle(imgFile4,contar.point1,3,(0,0,255),-1)
-        cv2.line(imgFile4,contar.point1,contar.point2,(0,0,255),1)
-        cv2.circle(imgFile4,contar.point2,3,(255,0,255),-1)
-           
-    for idx in range(len( track.p.p)):
-        if len(track.p.p[idx].path)>2: # si la longitud del path es mayor a dos
-            p1=(int(track.p.p[idx].path[-1].x),int(track.p.p[idx].path[-1].y))#mas reciente (cuadro actual)
-            p2=(int(track.p.p[idx].path[-2].x),int(track.p.p[idx].path[-2].y))#anterior     (cuadro anterior)
-            cv2.line(imgFile4,p1,p2,track.p.p[idx].colour,1)
-
-            for contar in contadores:
-                if (contar.testLine(p2,p1) and not track.p.p[idx].contadores[contar.linecount]):
-                    direct=contar.crossSign(p2,p1)
-                    cv2.circle(imgFile3,contar.intersectPoint(p2,p1),4,(100,255,255), -1) #intersecting point
-                    track.p.p[idx].contado=True
-                    track.p.p[idx].contadores[contar.linecount]=1
-                    contar.addToLineCounter(str(track.p.p[idx].str),frames,tiempoactual,direct)
     
     if count < len_SPT:
         itbuffer = createLineIterator(P1, P2, imgFile4)
@@ -179,14 +150,14 @@ while True:
         count += 1    
         
     elif count == len_SPT:
-        classes = [0,1,2,3,4,5,6,7,8]
         cv2.imwrite(os.path.join('SPT_images/Labels_init', "SPT_image_labels_"+tail+"_%04i.jpg" %number_SPT), acc_labels)
         acc_labels_th, labels_coord = edge_detect(acc_labels, classes,P1, P2)
         cv2.imwrite(os.path.join('SPT_images/Labels', "SPT_image_labels_"+tail+"_%04i.jpg" %number_SPT), acc_labels_th)
         SPT_RGB = np.uint8(cv2.merge([acc_R,acc_G,acc_B]))
         cv2.imwrite(os.path.join('SPT_images/RGB', "SPT_image_RGB_"+tail+"_%04i.jpg" %number_SPT),SPT_RGB )
+        print(number_SPT)        
         print('------------------------------------------------')
-        print(number_SPT)
+        
 
         txt_outpath = os.path.join('SPT_images/labels', "SPT_image_RGB_"+tail+"_%04i.txt" %number_SPT)
         txt_outfile = open(txt_outpath, "w")  
@@ -210,7 +181,7 @@ while True:
                     cv2.rectangle(SPT_RGB, (x,y), (u,v), colour[j], thickness=2, lineType=8, shift=0)
                     txt_outfile.write(str(x)+' '+str(y)+' '+str(u)+' '+str(v)+' '+num2clases[j]+'-'+str(j)+ '\r\n')
                     
-        #to keep the different image of the process           
+        #to keep the different images of the process           
         cv2.imwrite(os.path.join('SPT_images/RGB_rectangle', "SPT_image_RGB_rec_"+tail+"_%04i.jpg" %number_SPT),SPT_RGB )        
         cv2.imwrite(os.path.join('reportusefull', "spt"+tail+"_%04i.jpg" %number_SPT),SPT_RGB )
         cv2.imwrite(os.path.join('reportusefull', "algo"+tail+"_%04i.jpg" %number_SPT),imgFile3 )
@@ -218,18 +189,16 @@ while True:
         cv2.imwrite(os.path.join('reportusefull', "spt-gray"+tail+"_%04i.jpg" %number_SPT),acc_labels )
         cv2.imwrite(os.path.join('reportusefull', "spt-rect"+tail+"_%04i.jpg" %number_SPT),acc_labels_th )
         
-        cv2.imshow('SPT',SPT_RGB)# SPT_RGB)
+        cv2.imshow('SPT',SPT_RGB)# Show the STI with the bounding box
         txt_outfile.close()              
         number_SPT += 1
 
     k = cv2.waitKey(2)& 0xFF
     if k==ord('q'):    # Esc key=537919515 en linux WTF??? para parar y en mi otro PC 1048689
-        print ('interrupcion de usuario...')
+        print ('Interuption by the user...')
         break
 
-for contar in contadores:
-    contar.saveFinalCounts(frames)
-print ('Saliendo...')
+print ('Exit')
 cv2.destroyAllWindows()
 cam.release()
 exit()

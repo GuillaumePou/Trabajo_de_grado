@@ -1,4 +1,4 @@
-# en base a https://stackoverflow.com/questions/29791075/counting-the-point-which-intercept-in-a-line-with-opencv-python 
+ # en base a https://stackoverflow.com/questions/29791075/counting-the-point-which-intercept-in-a-line-with-opencv-python 
 import cv2
 import numpy as np
 import collections
@@ -18,7 +18,8 @@ mode = True # if True, draw rectangle. Press 'm' to toggle to curve
 ix,iy = -1,-1
 iix,iiy = -1,-1
 ox,oy=-1,-1
-num2clases=['particular', 'bus', 'motociclista', 'minivan', 'peaton', 'camion', 'taxi', 'ciclista', 'tractomula']
+num2clases=['particular', 'bus', 'motorcyclist', 'minivan', 'pedestrian', 'truck', 'taxi', 'cyclist', 'tractomula']
+
 
 def callbackMouse(event,x,y,flags,param):
     global ix,iy,iix,iiy,ox,oy,drawing,both
@@ -41,22 +42,18 @@ def callbackMouse(event,x,y,flags,param):
         
 class selectLine:
     
-    def __init__(self,imag,ownString='Seleccione un par de puntos para crear una linea ',filename='Linea_de_conteo.jpg',linecount=1):
+    def __init__(self,imag,ownString='Select two points to create a line ',filename='Linea_de_conteo.jpg',linecount=1):
         global ix,iy,uux,iiy,ox,oy,drawing,both
         self.pt1=(-1,-1)
         self.pt2=(-1,-1)
         self.error=True
-        print ("Por favor sobre la ventana llamada:")
-        print ("Seleccione Puntos")
-        print(ownString)
-        print (20*"_")
-        print ("Instrucciones:")
-        print ("1. seleccione un punto de inicio con el click derecho")
-        print ("2. mantenga sostenido el click y suelte donde quiera el otro punto")
-        print ("3. oprima q, Q, s, S o Esc para salir en cualquier momento y retornar la no seleccion de puntos")
+        print ("Instructions:")
+        print ("1. Select the first point with a right click")
+        print ("2. Keep pressing it until the final point you desire")
+        print ("3. Press q, Q, s, S o Esc to exit")
         
-        cv2.namedWindow('Seleccione Puntos')
-        cv2.setMouseCallback('Seleccione Puntos',callbackMouse)
+        cv2.namedWindow('Select points')
+        cv2.setMouseCallback('Select points',callbackMouse)
         
         while(1):
             img=imag.copy()
@@ -64,7 +61,7 @@ class selectLine:
                 cv2.circle(img,(ix,iy),3,(0,0,255),-1)
                 cv2.line(img,(ix,iy),(ox,oy),(255,122,110),2)
                 cv2.circle(img,(ox,oy),3,(255,0,255),-1)
-            cv2.imshow('Seleccione Puntos',img)
+            cv2.imshow('Select points',img)
             k = cv2.waitKey(1) & 0xFF
             if both:
                 self.pt1=(ix,iy)
@@ -84,14 +81,14 @@ class selectLine:
         uux,iiy=-1,-1
         ox,oy=-1,-1
         drawing,both=False,False
-        print ("puntos listos, gracias",self.pt1,self.pt2)
-        cv2.destroyWindow('Seleccione Puntos')
+        print ("Selected points:",self.pt1,self.pt2)
+        cv2.destroyWindow('Select points')
 
 
 class saveAndLoadParser:
     def __init__(self, filename="salida.txt"):
         self.filename=filename
-        print ("guardando archivo en "+filename )
+        print ("Saving file "+filename )
         
     def resetFile(self):
         self.FILE = open(self.filename,'w')
@@ -120,7 +117,7 @@ class saveAndLoadParser:
         elif type(data) is int:
             self.appendFile("int="+nameofdata+"="+str(data)+"\n")
         else:
-            print ("ERROR: tipo "+str(type(data))+" No soportado")
+            print ("ERROR: type "+str(type(data))+" Not supported")
             return 1
         return 0
             
@@ -148,11 +145,9 @@ class saveAndLoadParser:
         elif tipo == 'int':
             datos=eval(ln[2])
         else:
-            print ("ERROR: tipo "+tipo+" No soportado")
+            print ("ERROR: type "+tipo+" Not supported")
             return 1,1,1        
         return tipo,nombre,datos
-
-
 
 
 class counter:
@@ -218,7 +213,7 @@ class counter:
         self.FILE = open(self.filename_output,'w')
         self.FILE.write("etiqueta;acumulado;frame;tiempo;\n")
         self.FPS=fps
-        self.clases=clases={'particular': 0, 'bus': 1, 'motociclista': 2, 'minivan': 3, 'peaton': 4,  'camion': 5, 'taxi': 6, 'ciclista': 7, 'tractomula': 8}
+        self.clases={'particular': 0, 'bus': 1, 'motorcyclist': 2, 'minivan': 3, 'pedestrian': 4, 'truck': 5, 'taxi': 6, 'cyclist': 7, 'tractomula': 8}
         self.counterclases=np.zeros(len(self.clases))
         self.counterclases0=np.zeros(len(self.clases))
         self.counterclases1=np.zeros(len(self.clases))
@@ -233,11 +228,6 @@ class counter:
         self.sav.resetFile()
         self.sav.writeData("punto1",list(self.point1))
         self.sav.writeData("punto2",list(self.point2))
-        """
-        self.sav.writeData("filename_output",self.filename_output)
-        self.sav.writeData("filename_output_line",self.filename_output_line)
-        self.sav.writeData("FPS",self.FPS)
-        """
         
     def LoadLine(self):
         
@@ -349,11 +339,9 @@ class counter:
             return 0
 
 
-
 if __name__ == "__main__":
     cv2.namedWindow('frame')
-    frame = np.zeros((240,320,3), np.uint8)
-    
+    frame = np.zeros((240,320,3), np.uint8) 
     
     lineaconteo=selectLine(frame,ownString='Seleccione linea de conteo')    
     
@@ -363,9 +351,6 @@ if __name__ == "__main__":
     
     linept1=lineaconteo.pt1
     linept2=lineaconteo.pt2
-    
-    
-    
     
     lineacarrito=selectLine(frame)    
     
@@ -377,8 +362,6 @@ if __name__ == "__main__":
     contar=counter(linept1,linept2)    
 
 
-
-
     while(1):
         cv2.circle(frame,last_centroid,4,(0,255,0), -1) #last_centroid
         cv2.circle(frame,centroid,4,(0,255,0), -1) #current centroid
@@ -389,21 +372,14 @@ if __name__ == "__main__":
         ### EJEMPLO DE USO: 2 se usa testline para dar dos puntos a probar si hacen parte o no de la linea
         print("Are Lines Intersecting  1: ",contar.testLine(last_centroid,centroid)," sign ", contar.crossSign(last_centroid,centroid))
         cv2.circle(frame,contar.intersectPoint(last_centroid,centroid),4,(255,255,255), -1) #intersecting point
-        
-        #print("Are Lines Intersecting  2: ",contar.testLine(centroid,last_centroid))
-        #cv2.circle(frame,contar.intersectPoint(centroid,last_centroid),4,(0,0,255), -1) #intersecting point
-        
+  
         
         cv2.imshow('frame',frame)
         if cv2.waitKey(2000) & 0xFF == ord('q'):
-            break
-        
+            break       
     
     contar.saveLine
 
-
-
-
     while(1):
         cv2.circle(frame,last_centroid,4,(0,255,0), -1) #last_centroid
         cv2.circle(frame,centroid,4,(0,255,0), -1) #current centroid
@@ -415,14 +391,10 @@ if __name__ == "__main__":
         print("Are Lines Intersecting  1: ",contar.testLine(last_centroid,centroid)," sign ", contar.crossSign(last_centroid,centroid))
         cv2.circle(frame,contar.intersectPoint(last_centroid,centroid),4,(255,255,255), -1) #intersecting point
         
-        #print("Are Lines Intersecting  2: ",contar.testLine(centroid,last_centroid))
-        #cv2.circle(frame,contar.intersectPoint(centroid,last_centroid),4,(0,0,255), -1) #intersecting point
-        
         
         cv2.imshow('frame',frame)
         if cv2.waitKey(2000) & 0xFF == ord('q'):
             break
-
 
     cv2.destroyAllWindows()
     
@@ -430,7 +402,4 @@ if __name__ == "__main__":
     
     
     
-    
-    
-    
-    
+   
