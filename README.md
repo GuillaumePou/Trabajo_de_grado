@@ -9,10 +9,9 @@ You shoul download then unzipp and copy the folder in inference folder of the re
 
 First you should use the make file of darknet to set up darknet (depending of your configuration).
 Then, the following librairies need to be installed:
--
--
--
--
+- openCV
+- EasyGui
+- numpy
 
 Then to run these lines in the cmd
 PATH_to_repo/inference/python python inference.py
