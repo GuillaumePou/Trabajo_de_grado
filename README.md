@@ -17,4 +17,6 @@ Then, the following librairies need to be installed:
 Then to run these lines in the cmd
 PATH_to_repo/inference/python python inference.py
 
+For th elabeling algorithm weights are availaible ir:
+https://send.firefox.com/download/81f7b4394f69fe0e/#tJRqH0ZQz9H4MeEd5Trtxg
 
