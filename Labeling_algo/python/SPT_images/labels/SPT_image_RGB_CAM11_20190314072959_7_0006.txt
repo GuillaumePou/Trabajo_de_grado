@@ -1,8 +1,0 @@
-7
-389 31 414 233 particular-0
-313 263 352 374 motociclista-2
-265 207 292 306 motociclista-2
-355 185 380 310 motociclista-2
-217 172 241 291 motociclista-2
-142 307 255 374 taxi-6
-341 292 389 374 taxi-6

@@ -1,7 +1,0 @@
-6
-248 45 271 374 particular-0
-367 8 397 294 particular-0
-329 8 355 294 particular-0
-152 9 216 374 peaton-4
-29 274 55 374 taxi-6
-77 75 98 348 taxi-6
