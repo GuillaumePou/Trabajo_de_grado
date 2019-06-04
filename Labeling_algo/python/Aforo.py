@@ -1,4 +1,3 @@
-#!/usr/bin/python2import cv2
 import os
 os.environ['PATH']='/home/ubuntu/torch/install/bin:/bin:/usr/bin:/usr/X11R6/bin:/usr/local/bin:/usr/local/cuda/bin:/home/ubuntu/caffe/build/tools/'
 import easygui
@@ -19,7 +18,6 @@ meta = load_meta("../data/obj.data")
     
 #primera vez
 charlador=False
-#pintarTrayectos=True
 framesttl=5
 deCamara=False
 MAXW=550 ## 200 pixeles maximo de ancho permitido
