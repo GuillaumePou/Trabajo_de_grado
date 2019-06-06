@@ -36,7 +36,7 @@ frames=0
 ret_val, imgFile2 = cam.read()
 frames+=1
 if not ret_val:
-        print ('Couldn t open the camera')
+    print ('Couldn t open the camera')
     exit()
 
 imgFile3 = cv2.cvtColor(imgFile2, cv2.COLOR_BGR2RGB)
