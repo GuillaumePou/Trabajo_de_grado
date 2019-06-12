@@ -55,14 +55,14 @@ def createLineIterator(P1, P2, img):
                itbuffer[:,1] = np.arange(P1Y-1,P1Y-dYa-1,-1)
            else:
                itbuffer[:,1] = np.arange(P1Y+1,P1Y+dYa+1)
-           itbuffer[:,0] = (slope*(itbuffer[:,1]-P1Y)).astype(np.int) + P1X
+           itbuffer[:,0] = np.linspace(P1X, P2X, dYa).astype(np.int)
        else:
            slope = dY/dX
            if negX:
                itbuffer[:,0] = np.arange(P1X-1,P1X-dXa-1,-1)
            else:
                itbuffer[:,0] = np.arange(P1X+1,P1X+dXa+1)
-           itbuffer[:,1] = (slope*(itbuffer[:,0]-P1X)).astype(np.int) + P1Y
+           itbuffer[:,1] = np.linspace(P1Y, P2Y, dXa).astype(np.int)
 
    #Remove points outside of image
    colX = itbuffer[:,0]

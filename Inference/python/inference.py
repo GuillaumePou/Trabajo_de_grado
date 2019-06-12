@@ -194,7 +194,8 @@ while True:
         acc_R = np.ones((len(itbufferB[:,2]),len_SPT))   
         number_SPT += 1
         count = 0
-        
+    
+    
     k = cv2.waitKey(2)& 0xFF
     if k==ord('q'):    # Esc key=537919515 en linux WTF??? para parar y en mi otro PC 1048689
         print ('Forced user exit...')

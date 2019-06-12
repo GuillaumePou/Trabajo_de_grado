@@ -192,7 +192,13 @@ while True:
         cv2.imshow('SPT',SPT_RGB)# Show the STI with the bounding box
         txt_outfile.close()              
         number_SPT += 1
-
+        
+#        to show the creation of the STI
+#    SPT_RGB_build = np.uint8(cv2.merge([acc_R,acc_G,acc_B]))    
+#    cv2.line(imgFile2,P1,P2,1)
+#    cv2.imshow('video', imgFile2)     
+#    cv2.imshow('STI-build', SPT_RGB_build) 
+    
     k = cv2.waitKey(2)& 0xFF
     if k==ord('q'):    # Esc key=537919515 en linux WTF??? para parar y en mi otro PC 1048689
         print ('Interuption by the user...')
