@@ -10,11 +10,15 @@ The repository is divided into two parts.
  
  How to use it?
  
+ - Labeling_algorithm
+ Download weights available here:
+https://www.mediafire.com/file/ucoqdmly04tbybo/weight.rar/file
+After downloading, unzip then copy the folder in Labeling_algorithm folder of the repository.
 
-All the weights necessary to run the trained model are available at the following link:
+ - Inference
+Download weights available here:
 https://www.mediafire.com/file/plqcc2sw4pclj3x/weight_SDM.tar.gz/file
-
-You should download then unzip and copy the folder in inference folder of the repository.
+After downloading, unzip then copy the folder in inference folder of the repository.
 
 First, you should use the make file of darknet to set up darknet (depending on your configuration).
 Then, the following libraries need to be installed:
@@ -25,6 +29,5 @@ Then, the following libraries need to be installed:
 Then to run these lines in the cmd
 PATH_to_repo/inference/python python inference.py
 
-For the labeling algorithm weights are available here:
-https://www.mediafire.com/file/ucoqdmly04tbybo/weight.rar/file
 
+Do not hesitate to contact me or report an issue.
