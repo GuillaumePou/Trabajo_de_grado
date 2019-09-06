@@ -1,6 +1,6 @@
 # Trabajo de Grado
 
-This repository presents the code of my "trabajo de grado" realized to obtain an undergraduate degree in electronic engineering from the "Pontificia Universidad Javeriana" of Bogota and the master from the french engineering school INP-ENSEEIHT. The project received the congratulations of the jury from the Pontificia Universidad Javeriana.
+This repository presents the code of my "Trabajo de Grado" realized to obtain an undergraduate degree in electronic engineering from the "Pontificia Universidad Javeriana" of Bogota and the master from the french engineering school INP-ENSEEIHT. The project received the congratulations of the jury from the Pontificia Universidad Javeriana.
 
 The PDF file is the thesis of the project.
 
@@ -30,4 +30,4 @@ Then to run these lines in the cmd
 PATH_to_repo/inference/python python inference.py
 
 
-Do not hesitate to contact me or report an issue.
+Do not hesitate to contact me or to report an issue.
