@@ -2,8 +2,10 @@
 
 This repository presents the code of my "trabajo de grado" realized to obtain the undergraduate degree in electronic engineering from the "Pontificia Universidad Javeriana" of Bogota and the master from the french engineering school INP-ENSEEIHT.
 
-The work is in two part.
- - The fisrt part called "Labeling_algorithm" presents a solution to label spatio temporal images.
+The PDF file is the thesis of the project.
+
+The repository is divided in two part.
+ - The fisrt part called "Labeling_algorithm" presents a solution to label spatio temporal images using an open source algorithm.
  - The second part called "Inference" presents the counting algorithm using a spatio-temporal images to count and classify vehicles in real time.
  
  How to use?
