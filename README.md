@@ -8,7 +8,7 @@ The PDF file is the thesis of the project.
 
 
 The repository is divided into two parts.
- - The first part called "Labeling_algorithm" presents a solution to label spatio-temporal images based on an open-source algorithm. All the details of that algorithm are available here: http://urban-dataset.com/
+ - The first part called "Labeling_algorithm" presents a solution to label spatio-temporal images based on an open-source algorithm presented here http://urban-dataset.com/
  - The second part called "Inference" presents the counting algorithm using spatio-temporal images to count and classify vehicles in real-time. It uses darknet and YOLO models developped by https://github.com/pjreddie and available here https://github.com/pjreddie/darknet
  
  How to use it?
