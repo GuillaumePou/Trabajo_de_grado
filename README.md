@@ -23,7 +23,7 @@ Download weights available here:
 https://www.mediafire.com/file/plqcc2sw4pclj3x/weight_SDM.tar.gz/file
 After downloading, unzip then copy the folder in inference folder of the repository.
 
-First, you should use the make file of darknet to set up darknet (depending on your configuration).
+First, you should use the make file of darknet to set up darknet, more details here https://pjreddie.com/darknet/install/.
 Then, the following libraries need to be installed:
 - openCV
 - EasyGui
