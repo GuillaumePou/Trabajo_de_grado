@@ -12,6 +12,7 @@ The repository is divided into two parts.
 Use that repository
 
 - How to use the labeling algorithm?
+
 Download weights here: https://www.mediafire.com/file/ucoqdmly04tbybo/weight.rar/file.
 After downloading, unzip then copy the folder (weight_SDM) in Labeling_algorithm folder of the repository.
 Then setup darknet for your computer and useful libraries, see below.
@@ -23,6 +24,7 @@ To convert to YOLO input the labels you can use the folder Labeling_algo/python/
 It is then possible to train YOLO models using the Inference folder or directly try it with the available weights.
 
 - How to use the Inference algorithm?
+
 Download weights here: https://www.mediafire.com/file/plqcc2sw4pclj3x/weight_SDM.tar.gz/file.
 After downloading, unzip then copy the folder in Inference folder of the repository.
 Then setup darknet for your computer and useful libraries, see below.
@@ -31,6 +33,7 @@ A graphic interface will guide you in different steps. PS: The threshold of dete
 After processing the whole video, a sum-up file is available in the video folder.
 
 - Darknet and other libraries
+
 First, you should use the make file of darknet to set up darknet, more details here https://pjreddie.com/darknet/install/. Then, the following libraries need to be installed:
 openCV
 EasyGui
