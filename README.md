@@ -16,7 +16,7 @@ Use that repository
 Download weights here: https://www.mediafire.com/file/ucoqdmly04tbybo/weight.rar/file.
 After downloading, unzip then copy the folder (weight_SDM) in Labeling_algorithm folder of the repository.
 Then setup darknet for your computer and useful libraries, see below.
-To try the code, you can use the following video: 
+To try the code, you can use the following video: https://www.mediafire.com/file/e3xnqpobyl2lojm/CAM11_20190314072959_7.avi/file
 then, you should run the following command: PATH_to_repo/Labeling_algo/python python Aforo.py
 If you want to run it for several videos without the need to reload models and video, place all the videos in the same folder and then run: PATH_to_repo/Labeling_algo/python python Aforo-auto.py
 In the folder Labeling_algo/python/SPT_images you will obtain different images representing the different steps of the process. (see read.me of the folder for more explanation)
@@ -29,6 +29,7 @@ Download weights here: https://www.mediafire.com/file/plqcc2sw4pclj3x/weight_SDM
 After downloading, unzip then copy the folder in Inference folder of the repository.
 Then setup darknet for your computer and useful libraries, see below.
 To try the code run the following command: PATH_to_repo/Inference/python Inference.py
+You can use the following video: https://www.mediafire.com/file/e3xnqpobyl2lojm/CAM11_20190314072959_7.avi/file
 A graphic interface will guide you in different steps. PS: The threshold of detection is not the same for each model, that is why there are different darknet files in that folder.
 After processing the whole video, a sum-up file is available in the video folder.
 
