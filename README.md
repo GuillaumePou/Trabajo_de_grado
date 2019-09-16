@@ -65,12 +65,11 @@ After processing the whole video, a sum-up file is available in the video folder
 
 ### Prerequisites
 
-- Darknet and other libraries
+- [Python 2.7](https://www.python.org/downloads/release/python-2715/)
+- [Darknet](https://pjreddie.com/darknet/install/). You can directly use the makefile in the folders but you probably need to change it depending of your configuration.
+- Python lybrairies: 
 
-First, you should use the make file of darknet to set up darknet, more details here [darknet](https://pjreddie.com/darknet/install/). Then, the following libraries need to be installed:
-openCV
-EasyGui
-numpy
+[OpenCV](https://opencv.org/), [EasyGui](https://pypi.org/project/easygui/), [numpy](https://pypi.org/project/numpy/), [glob](https://pypi.org/project/glob2/).
 
 ## Issues
 
