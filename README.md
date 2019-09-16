@@ -1,6 +1,6 @@
 # Trabajo de Grado
 
-This repository presents the code of my "Trabajo de Grado" realized to obtain an undergraduate degree in electronic engineering from the [Pontificia Universidad Javeriana](https://www.javeriana.edu.co/home) of Bogota and a master degree from the french engineering school [INP-ENSEEIHT](http://www.enseeiht.fr/en/index.html). The project received the congratulations of the jury from the Pontificia Universidad Javeriana.
+This repository presents the code of my "Trabajo de Grado" realized to obtain an undergraduate degree in electronic engineering from the [Pontificia Universidad Javeriana](https://www.javeriana.edu.co/home) of Bogota and a master degree from the French engineering school [INP-ENSEEIHT](http://www.enseeiht.fr/en/index.html). The project received the congratulations of the jury from the Pontificia Universidad Javeriana.
 
 ## Project description
 
@@ -22,7 +22,7 @@ After downloading, unzip then copy the folder (weight_SDM) in Labeling_algorithm
 Then setup darknet for your computer and useful libraries, see below (Prerequisites).
 
 #### Recommended video for test
-To try the code, you can use the following [video](https://www.mediafire.com/file/e3xnqpobyl2lojm/CAM11_20190314072959_7.avi/file). It is one of the video used for the project.
+To try the code, you can use the following [video](https://www.mediafire.com/file/e3xnqpobyl2lojm/CAM11_20190314072959_7.avi/file). It is one of the videos used for the project.
 
 #### Running the tests
 To run the labeling algorithm with one video, and get the label run the following line.
@@ -34,7 +34,7 @@ If you want to run it for several videos without the need to reload models and v
 PATH_TO_REPO/Labeling_algo/python python Aforo-auto.py
 ```
 
-In the folder Labeling_algo/python/SPT_images, you will obtain different images representing the different steps of the process and also the labels in a textfile. (see read.me of the folder for more explanation)
+In the folder Labeling_algo/python/SPT_images, you will obtain different images representing the different steps of the process and also the labels in a text file. (see read.me of the folder for more explanation)
 
 To convert to YOLO input the labels you can use the folder:
 ```
@@ -66,8 +66,8 @@ After processing the whole video, a sum-up file is available in the video folder
 ### Prerequisites
 
 - [Python 2.7](https://www.python.org/downloads/release/python-2715/)
-- [Darknet](https://pjreddie.com/darknet/install/). You can directly use the makefile in the folders but you probably need to change it depending of your configuration.
-- Python lybrairies: 
+- [Darknet](https://pjreddie.com/darknet/install/). You can directly use the makefile in the folders but you probably need to change it depending on your configuration.
+- Python libraries: 
 
 [OpenCV](https://opencv.org/), [EasyGui](https://pypi.org/project/easygui/), [numpy](https://pypi.org/project/numpy/), [glob](https://pypi.org/project/glob2/).
 
