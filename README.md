@@ -2,8 +2,15 @@
 
 This repository presents the code of my "Trabajo de Grado" realized to obtain an undergraduate degree in electronic engineering from the "Pontificia Universidad Javeriana" of Bogota and the master from the french engineering school INP-ENSEEIHT. The project received the congratulations of the jury from the Pontificia Universidad Javeriana.
 
-This thesis presents a new method using spatio-temporal images to count and to classify in nine objects-classes objects crossing a defined line in the street using convolutional neural networks. The nine classes are pedestrian, bicycle, motorcycle, personal car, taxi, minivan, truck, trucking-rigs, bus. Firstly, it presents an automatic labeling algorithm of the spatio-temporal images based on an opensource algorithm of the "Secretaria de movilidad de Bogota". The labeling algorithm allows creating a data set, to train different convolutional networks, in particular, YOLO networks. The results and parameters of training are presented. The trained models are then used to count the numbers of objects in each spatio-temporal image to realize the counting for the whole video test. This counting method is compared with manual counting and the open-source algorithm in terms of counting and also in terms of processing time.
-The PDF file is the thesis of the project.
+## Project description
+
+This thesis presents a new method using spatio-temporal images to count and to classify in nine objects-classes objects crossing a defined line in the street using convolutional neural networks. The nine classes are pedestrian, bicycle, motorcycle, personal car, taxi, minivan, truck, trucking-rigs, bus. Firstly, it presents an automatic labeling algorithm of the spatio-temporal images based on an opensource algorithm of the "Secretaria de movilidad de Bogota". The labeling algorithm allows creating a data set, to train different convolutional networks, in particular, YOLO networks. The trained models are then used to count the numbers of objects in each spatio-temporal image to realize the counting for the whole video test. It reacches in some condition arround 90% acurracy and run at 40 frames per second. For more detail about the thesis and review the results, take a look at the thesis available in the PDF file.
+
+
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+
+
+### Installing
 
 The repository is divided into two parts.
 - The first part called "Labeling_algorithm" presents a solution to label spatio-temporal images based on an open-source algorithm presented here http://urban-dataset.com/
@@ -40,4 +47,49 @@ openCV
 EasyGui
 numpy
 Then to run these lines in the cmd PATH_to_repo/inference/python python inference.py
-Do not hesitate to contact me or to report an issue.
+
+
+A step by step series of examples that tell you how to get a development env running
+
+Say what the step will be
+
+```
+Give the example
+```
+
+And repeat
+
+```
+until finished
+```
+
+End with an example of getting some data out of the system or using it for a little demo
+
+
+### Prerequisites
+
+What things you need to install the software and how to install them
+
+```
+Give examples
+```
+
+## Running the tests
+
+Explain how to run the automated tests for this system
+
+## Issues
+
+I will be pleased to answer you for any questions or issues.
+
+## Authors
+
+* **Guillaume Poullain** [LinkedIn](https://www.linkedin.com/in/guillaume-poullain/?locale=en_US)
+
+## License
+
+This project is not licensed.
+
+## Acknowledgments
+
+* **Francisco Carlos Calderon** - *Thesis director* - [GitHub](https://github.com/calderonf)
