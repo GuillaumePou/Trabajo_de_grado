@@ -16,7 +16,7 @@ The repository is divided into two parts.
 ### Installing the labeling algorithm
 #### Prerequisites
 
-Download weights [here](https://www.mediafire.com/file/ucoqdmly04tbybo/weight.rar/file).
+Download weights [here](http://www.mediafire.com/file/plqcc2sw4pclj3x/weight_SDM.tar.gz/file).
 After downloading, unzip then copy the folder (weight_SDM) in Labeling_algorithm folder of the repository.
 
 Then setup darknet for your computer and useful libraries, see below (Prerequisites).
@@ -45,7 +45,7 @@ It is then possible to train YOLO models using the Inference folder or directly 
 
 ### Installing the Inference algorithm
 #### Prerequisites
-Download weights [here](https://www.mediafire.com/file/plqcc2sw4pclj3x/weight_SDM.tar.gz/file).
+Download weights [here](https://www.mediafire.com/file/ucoqdmly04tbybo/weight.rar/file).
 After downloading, unzip then copy the folder in Inference folder of the repository.
 
 Then setup darknet for your computer and useful libraries, see below.
